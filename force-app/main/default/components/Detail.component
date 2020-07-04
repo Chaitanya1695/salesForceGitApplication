@@ -1,0 +1,47 @@
+<apex:component controller="JobCustomContollerApex" >
+  
+  <apex:pageBlock >
+  <apex:pageBlockSection title="Job Details"> 
+      
+  <table border="5px" >        
+     
+      <tr><th></th><th></th>
+          <th>Job_Type__c</th><th>Number_of_Positions__c</th>
+          <th>Description</th><th>Expires_On__c</th><th>Salary_Offered__c</th>
+          <th>Manager__c</th><th>Required_Skills__c</th><th>Qualification_Required__c</th>
+          <th>Certification_Required__c</th>  <th>Active__c</th> 
+      </tr>
+      
+ <apex:repeat value="{! Detail}" var="Job"  >
+     <tr> 
+         <td>  save</td>
+         <td> edit </td>
+         <td> {! Job.Job_Type__c}</td>
+          <td>{! Job.Number_of_Positions__c}</td>
+        <td>{! Job.Descriptions__c}</td>
+      
+       <td> {! Job.Expires_On__c}</td>
+      <td> {! Job.Salary_Offered__c}</td>
+      <td>  {! Job.Manager__c}</td>
+      
+      <td>  {! Job.Required_Skills__c}</td>
+     <td>  {! Job.Qualification_Required__c}</td>
+     <td>  {! Job.Certification_Required__c}</td>
+     <td>  {! Job.Active__c}</td>
+    
+      </tr>
+     <table>
+    <apex:repeat value="{! Detail}" var="cand">
+        <tr>
+              <td>{! cand.Active__c}</td><td></td><td></td><td></td>
+              <td></td><td></td><td></td><td></td>
+        </tr>
+     </apex:repeat>
+     </table>
+ </apex:repeat>
+      </table>    
+ </apex:pageBlockSection>
+ 
+  </apex:pageBlock>
+ 
+</apex:component>

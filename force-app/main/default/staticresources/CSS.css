@@ -1,0 +1,18 @@
+#js {
+	
+	color: green;
+	background-color:black;
+}
+
+#page,#pb{
+	
+	background-color:black;
+	color:lime;
+}
+
+#first,#pbs{
+	
+	color:lime;
+	background-color:black;
+	font-size: 25px;
+}

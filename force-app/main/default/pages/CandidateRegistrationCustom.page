@@ -1,0 +1,67 @@
+<apex:page controller="CandidateCustomController" tabStyle="Candidate__c" showHeader="false" sidebar="false"  >
+    
+    <apex:form id="frm" onmouseover="validate()"  >
+       <apex:pageBlock mode="edit" title="Candidate Wizard">
+            <apex:pageBlockSection >
+           <apex:image url="{!$Resource.Enzigma_logo}" width="220" height="100"  />
+           </apex:pageBlockSection>
+           <apex:pageBlockSection >
+       
+           <apex:inputField value="{! candidate.Name}" id="name" />    
+          <apex:inputField value="{! candidate.Salutation__c}" id="Salutation"/>
+          <apex:inputField value="{! candidate.First_Name__c}" id="FirstName"/>
+          <apex:inputField value="{! candidate.Last_Name__c}" id="LastName"/>
+            <apex:inputField value="{! candidate.DOB__c}" id="DOB" />
+            <apex:inputField value="{! candidate.Email__c}" id="Email"/>
+             <apex:inputField value="{! candidate.Expected_Salary__c}" id="ExpectedSalary"/>
+             <apex:inputField value="{! candidate.Application_Date__c}" id="ApplicationDate"/>
+              <apex:inputField value="{! candidate.Country__c}" id="Country" />
+             <apex:inputField value="{! candidate.State__c}" id="State"/>
+             <apex:inputField value="{! candidate.Status__c}" id="Status"/>
+             
+               <apex:inputField value="{! candidate.Job__c}" id="Job"/> 
+           
+               <apex:commandButton action="{! save}" value="create & save" id="btn" />
+              
+				
+            <script>
+              
+                  function validate(){
+                              
+                      
+                      var name=document.getElementById('{!$Component.name}').value;
+                      
+              
+                  var Salutation=document.getElementById('{!$Component.Salutation}').value;
+                      
+                  
+                  var FirstName=document.getElementById('{!$Component.FirstName}').value;
+                  var LastName=document.getElementById('{!$Component.LastName}').value;
+                  var DOB=document.getElementById('{!$Component.DOB}').value;
+                  var Email=document.getElementById('{!$Component.Email}').value;
+                  var ExpectedSalary=document.getElementById('{!$Component.ExpectedSalary}').value;
+                  var ApplicationDate=document.getElementById('{!$Component.ApplicationDate}').value;
+                  var Country=document.getElementById('{!$Component.Country}').value;
+                  var State=document.getElementById('{!$Component.State}').value;
+                  var Status=document.getElementById('{!$Component.Status}').value;
+                      
+                  var Job=document.getElementById('{!$Component.Job}').value;     
+                      alert("111");
+                       if(Salutation=="" || FirstName=="" || LastName=="" || DOB=="" || Email=="" || ExpectedSalary=="" || ApplicationDate=="" || Country=="" || State=="" || Status=="" || Job=="")
+                      {
+                          
+                            document.getElementById('{!$Component.btn}').disabled = true;
+                      }
+                       else
+                            {
+                             document.getElementById('{!$Component.btn}').disabled = false;
+                            }
+                               */  
+                  }
+           </script>
+          
+            </apex:pageBlockSection>
+       </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

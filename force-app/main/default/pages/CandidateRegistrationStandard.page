@@ -1,0 +1,23 @@
+<apex:page standardController="Candidate__c">
+    <apex:form >
+       <apex:pageBlock title="Create candidate record">
+           <apex:pageBlockSection >
+               <apex:inputField value="{! Candidate__c.Salutation__c}" />
+               <apex:inputField value="{! Candidate__c.First_Name__c}" />
+               <apex:inputField value="{! Candidate__c.Last_Name__c}" />
+               <apex:inputField value="{! Candidate__c.DOB__c}" />
+               <apex:inputField value="{! Candidate__c.Email__c}" />
+               <apex:inputField value="{! Candidate__c.Expected_Salary__c}" />
+               <apex:inputField value="{! Candidate__c.Application_Date__c}" />
+               <apex:inputField value="{! Candidate__c.Country__c}" />
+               <apex:inputField value="{! Candidate__c.State__c}" />
+               <apex:inputField value="{! Candidate__c.Status__c}" />
+               <apex:inputField value="{! Candidate__c.Job__c}"/>
+           </apex:pageBlockSection>
+           <apex:pageBlockButtons >
+                <apex:commandButton action="{! Save}" value="save" />
+                <apex:commandButton action="{! Edit}" value="edit" />
+           </apex:pageBlockButtons>
+       </apex:pageBlock>      
+    </apex:form>   
+</apex:page>

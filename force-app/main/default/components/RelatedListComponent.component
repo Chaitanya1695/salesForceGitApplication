@@ -1,0 +1,20 @@
+<apex:component controller="CandidateVFController" >
+   <apex:pageBlock >
+  <apex:pageBlockSection title="Candidate List"> 
+ <apex:repeat value="{! CandidateList }" var="cand"  >
+      <ol>
+       <apex:outputField value="{! cand.First_Name__c}"/><br/>
+       <apex:outputField value="{! cand.Last_Name__c}"/><br/>
+        <apex:outputField value="{! cand.Email__c}"/><br/>
+       <apex:outputField value="{! cand.Country__c}"/><br/>
+        <apex:outputField value="{! cand.State__c}"/><br/>
+       <apex:outputField value="{! cand.Status__c}"/><br/>
+        <apex:outputField value="{! cand.Job__c}"/><br/>
+      
+      </ol>
+ </apex:repeat>
+ </apex:pageBlockSection>
+ 
+  </apex:pageBlock>
+ 
+</apex:component>

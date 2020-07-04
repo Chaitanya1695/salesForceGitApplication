@@ -1,0 +1,5 @@
+<apex:page >
+   
+    <c:Detail />   
+    
+</apex:page>

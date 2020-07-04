@@ -1,0 +1,36 @@
+<apex:page id="page" controller="JobCustomController" tabStyle="Job__c" showHeader="false" sidebar="false" >
+   
+    <apex:stylesheet value="{!$Resource.CSS}"/>
+    <apex:includeScript value="{!$Resource.JavaScript}"/>
+    <apex:pageBlock mode="edit" title="Job Wizard" id="pb" >
+       <apex:image url="{!$Resource.Enzigma_logo}" width="220" height="100"  />
+      <apex:form id="js"  >
+        <br/>
+        <h1  id="first"><u>Job Registration</u></h1>
+        <br/>
+        <br/>
+        <h1>
+            Step-1
+        </h1>
+        <apex:pageBlockSection id="pbs" >
+           
+            <apex:inputField value="{! job.Descriptions__c}" id="Descriptions"/>
+            <apex:inputField value="{! job.Manager__c}" id="Manager" onkeyup="check()" />
+            <apex:inputField value="{! job.Number_of_Positions__c}" id="NumberofPositions"/>
+            <apex:inputField value="{! job.Expires_On__c}" id="ExpiresOn"/>
+            <apex:inputField value="{! job.Salary_Offered__c}" id="SalaryOffered"/>
+            <apex:inputField value="{! job.Job_Type__c}" id="JobType"/>
+            <apex:inputField value="{! job.Required_Skills__c}" id="RequiredSkills"/>
+            <apex:inputField value="{! job.Qualification_Required__c}" id="QualificationRequired"/>
+            <apex:inputField value="{! job.Certification_Required__c}" id="CertificationRequired"/>
+            <apex:inputField value="{! job.Active__c}" id="Active"/>
+            <apex:commandButton action="{! save}" value="save & next" id="Btn" />
+           
+      
+       
+          
+           
+         </apex:pageBlockSection>
+       </apex:form>
+     </apex:pageBlock>
+</apex:page>
