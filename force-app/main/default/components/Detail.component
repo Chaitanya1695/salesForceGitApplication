@@ -5,7 +5,7 @@
       
   <table border="5px" >        
      
-      <tr><th></th><th></th>
+      <tr>
           <th>Job_Type__c</th><th>Number_of_Positions__c</th>
           <th>Description</th><th>Expires_On__c</th><th>Salary_Offered__c</th>
           <th>Manager__c</th><th>Required_Skills__c</th><th>Qualification_Required__c</th>
@@ -13,9 +13,9 @@
       </tr>
       
  <apex:repeat value="{! Detail}" var="Job"  >
+    
      <tr> 
-         <td>  save</td>
-         <td> edit </td>
+        
          <td> {! Job.Job_Type__c}</td>
           <td>{! Job.Number_of_Positions__c}</td>
         <td>{! Job.Descriptions__c}</td>
@@ -30,16 +30,16 @@
      <td>  {! Job.Active__c}</td>
     
       </tr>
-     <table>
-    <apex:repeat value="{! Detail}" var="cand">
+    
+     <!--<apex:repeat value="{! Detail}" var="cand">
         <tr>
               <td>{! cand.Active__c}</td><td></td><td></td><td></td>
               <td></td><td></td><td></td><td></td>
         </tr>
-     </apex:repeat>
-     </table>
+     </apex:repeat>--> 
+    
  </apex:repeat>
-      </table>    
+      </table>   
  </apex:pageBlockSection>
  
   </apex:pageBlock>

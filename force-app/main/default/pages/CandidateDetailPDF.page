@@ -1,0 +1,11 @@
+<apex:page standardController="Candidate__c"  recordSetVar="cand"  showHeader="false"  >
+  <apex:form >
+            <h1 style="font-size:20px;">Candidate PDF Generation</h1>  
+             <body>
+                 <table style="width:100%;">
+                     
+                 </table>
+                 
+             </body>
+    </apex:form>
+</apex:page>

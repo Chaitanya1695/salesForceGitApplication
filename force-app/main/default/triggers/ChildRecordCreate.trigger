@@ -7,10 +7,8 @@ trigger ChildRecordCreate on Account (before insert) {
        c.LastName=data.Name;
         acc.add(c);
     }
+    insert acc;
     
-    if(acc.size()>0)
-    {
-        System.debug(acc[0]);
-    }
+  
     
 }
