@@ -1,9 +1,37 @@
-<apex:page standardController="Candidate__c"  recordSetVar="cand"  showHeader="false"  >
+<apex:page standardController="Candidate__c"  recordSetVar="cand"  showHeader="false" renderAs="pdf" >
+   
   <apex:form >
             <h1 style="font-size:20px;">Candidate PDF Generation</h1>  
              <body>
-                 <table style="width:100%;">
-                     
+                 <table style="border:5px;width:100%;border-collapse:collapse;">
+                     <tbody style="display:table-row-group;vertical-align:middle;" >
+                        
+                            <tr style="display:table-row;">
+                              
+                              <th style="background-color:black;color:lime;border:1px solid #8b4b3d;" >Salutation</th>
+                              <th style="background-color:black;color:lime;border:1px solid #8b4b3d;">FirstName</th>
+                              <th style="background-color:black;color:lime;border:1px solid #8b4b3d;">LastName</th>
+                               <th style="background-color:black;color:lime;border:1px solid #8b4b3d;">Email</th>
+                              <th style="background-color:black;color:lime;border:1px solid #8b4b3d;">ExpectedSalary</th>
+                              <th style="background-color:black;color:lime;border:1px solid #8b4b3d;">Country</th>
+                              <th style="background-color:black;color:lime;border:1px solid #8b4b3d;">State</th> 
+                               <th style="background-color:black;color:lime;border:1px solid #8b4b3d;">Status</th>
+                            </tr> 
+                           <apex:repeat value="{! cand}" var="data" > 
+                               <tr>
+                                   <td style="font-size:1em;border:1px solid #8b4b3d"> {!data.Salutation__c}</td>
+                                   <td style="font-size:1em;border:1px solid #8b4b3d">{!data.First_Name__c}</td>
+                             <td style="font-size:1em;border:1px solid #8b4b3d">{!data.Last_Name__c}</td>
+                             <td style="font-size:1em;border:1px solid #8b4b3d">{!data.Email__c}</td>
+                              <td style="font-size:1em;border:1px solid #8b4b3d">{!data.Expected_Salary__c}</td>
+                                <td style="font-size:1em;border:1px solid #8b4b3d">{!data.Country__c}</td>
+                              <td style="font-size:1em;border:1px solid #8b4b3d">{!data.State__c}</td>
+                              <td style="font-size:1em;border:1px solid #8b4b3d">{!data.Status__c}</td>
+                            
+                               
+                               </tr>
+                           </apex:repeat>
+                     </tbody>
                  </table>
                  
              </body>
