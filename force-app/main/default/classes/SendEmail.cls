@@ -2,7 +2,7 @@ public class SendEmail {
  @Future(callout=true)
   public static void SendToCandidate(List<ID> candidateId){
      
-         candidate__c candForEmailAddress=[SELECT Full_Name__c,Email__c FROM candidate__c WHERE ID =: candidateId];
+        candidate__c candForEmailAddress=[SELECT Full_Name__c,Email__c FROM candidate__c WHERE ID =: candidateId];
         PageReference ref = Page.CandidateDetailPDF;
         Blob b = ref.getContent();
      
@@ -13,10 +13,10 @@ public class SendEmail {
         String addresses;
         mail.setSubject( 'Congratulations!!! You are Hired.' +String.valueOf(DateTime.now()));
         String[] toAddresses = new String[] {candForEmailAddress.Email__c};
-        String subject = 'Congratulations!!! You are Hired.'+String.valueOf(DateTime.now());
+       // String subject = 'Congratulations!!! You are Hired.'+String.valueOf(DateTime.now());
         String  body='Hello '+candForEmailAddress.Full_Name__c+ ',\n\t\t You are Hired for the applied position';
         mail.setToAddresses(toAddresses);
-        mail.setSubject(subject);
+       // mail.setSubject(subject);
         mail.setPlainTextBody(body);
       
         mail.setFileAttachments(new Messaging.EmailFileAttachment[] {efa1});

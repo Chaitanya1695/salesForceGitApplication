@@ -20,7 +20,9 @@ public class JobAllTest {
         newJob.Certification_Required__c='CMP (Certified Project Manager)';
         
         insert newJob;
+        
          System.assertNotEquals(null, newJob.Id);
+        
         
        Candidate__c c = new Candidate__c();
         
@@ -45,10 +47,13 @@ public class JobAllTest {
         c2.Expected_Salary__c=5000;
         c2.Status__c = 'Applied';
         c2.Job__c=newJob.Id;
+        
         insert c2;
-         System.assertNotEquals(null, c2.Id);
+        
+        System.assertNotEquals(null, c2.Id);
         
         List<Candidate__c> candList=CandidateVFController.getCandidateList();
+        
         //System.assertEquals(23, candList.size());
     }
     
