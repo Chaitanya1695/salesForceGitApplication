@@ -1,0 +1,12 @@
+<apex:page standardController="Contact" recordSetVar="contactList">
+    <apex:pageBlock >
+      <apex:pageBlockTable value="{!selected}" var="objAccount" >
+          <apex:repeat value="{! $ObjectType.Contact.FieldSets.ContactFieldSet}" var="field" > 
+               <apex:column headerValue="{!field.Label}" value="{!objAccount[field]}" />
+          
+          </apex:repeat>
+        
+      </apex:pageBlockTable>
+    </apex:pageBlock>
+ 
+</apex:page>

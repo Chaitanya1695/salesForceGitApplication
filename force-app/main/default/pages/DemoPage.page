@@ -1,0 +1,17 @@
+<apex:page standardController="Contact" recordSetVar="" >
+ 
+      <apex:form >
+        <apex:pageBlock title="aaa">
+   
+           <apex:pageBlockSection title="www">
+           
+               <apex:inputField value="{! Contact.LastName }" />    
+             <apex:inputField value="{! Contact.email }" />  
+             <apex:inputField value="{! Contact.phone }" />  
+         
+            <apex:commandButton action="{! cancel}" value="Canc" />
+       </apex:pageBlockSection> 
+      
+     </apex:pageBlock>    </apex:form>
+ 
+</apex:page>

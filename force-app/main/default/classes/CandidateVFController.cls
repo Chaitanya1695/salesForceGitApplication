@@ -4,7 +4,7 @@ public class CandidateVFController {
 
     public static List<Candidate__c> getCandidateList(){
 
-       List<Candidate__c> candList = new List<Candidate__c>([Select First_Name__c,Last_Name__c, Email__c,Country__c,State__c,Status__c,Job__c FROM Candidate__c  ]);
+       List<Candidate__c> candList = new List<Candidate__c>([Select First_Name__c,Last_Name__c, Email__c,Country__c,State__c,Status__c,Job__c FROM Candidate__c]);
         
        System.debug(candList.size());
         

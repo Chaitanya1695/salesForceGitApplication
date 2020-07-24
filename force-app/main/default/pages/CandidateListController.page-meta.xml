@@ -3,7 +3,7 @@
     <apiVersion>48.0</apiVersion>
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <label>CandidateRegistrationStandard</label>
+    <label>CandidateListController</label>
     <packageVersions>
         <majorNumber>1</majorNumber>
         <minorNumber>19</minorNumber>

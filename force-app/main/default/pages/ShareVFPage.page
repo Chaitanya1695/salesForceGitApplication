@@ -1,0 +1,14 @@
+<apex:page controller="DemoWithShareVfPage" >
+    
+    <apex:pageBlock title="Account Detail" > 
+        
+    <!--<apex:repeat value="{! InsertDetails}" var="data">
+        
+        {! data.Name}
+       
+    </apex:repeat>-->
+        
+        
+    </apex:pageBlock>
+    
+</apex:page>

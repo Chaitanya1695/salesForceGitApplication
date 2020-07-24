@@ -1,5 +1,125 @@
-<apex:page >
-   
-    <c:Detail />   
+<!--<apex:page showHeader="false" doctype="html-5.0" standardStylesheets="false">
+    <html lang="en">
+        <head>
+            <title>Bootstrap Example</title>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                $("#hide").click(function(){
+                    $("#com").hide();
+                });
+                $("#show").click(function(){
+                    $("#com").show();
+                });
+                $("#hide1").click(function(){
+                    $("#com1").hide();
+                });
+                $("#show1").click(function(){
+                    $("#com1").show();
+                });
+            });
+            </script>
+           
+        </head>
+        <body>
+            <div class="row">
+                <div class="col-sm-4" ></div>
+                <div class="col-sm-4" > <h1 > View Job</h1></div>
+                <div class="col-sm-4" ></div>
+            </div>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h3>Detail Section</h3>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4" ></div>
+                    <div class="col-sm-4"> </div>
+                    <div class="col-sm-4" >
+                        <div class="btn-group">
+                            <button id="hide" type="button" class="btn btn-primary">Hide</button>
+                            <button id="show" type="button" class="btn btn-primary">Show</button>
+                        </div>
+                    </div>    
+                </div>
+                <div id="com">             
+                    
+                    
+                   <c:Detail /> 
+                </div>
+            </div>
+            
+            
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h3>New list of form</h3> <div class="row">
+                    <div class="col-sm-4" ></div>
+                    <div class="col-sm-5"> </div>
+                    <div class="col-sm-3" >
+                        <div class="btn-group">
+                            <button id="hide1" type="button" class="btn btn-primary">Hide</button>
+                            <button id="show1" type="button" class="btn btn-primary">Show</button>
+                        </div>
+                    </div>    
+                    </div>
+                    <div id="com1">
+                        <c:NewCandidateForm />
+                    </div>     
+                </div>
+            </div><div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h3>List of Candidate</h3>
+               <c:RelatedListComponent />
+
+            </div>
+            </div>
+        </body>
+    </html>
     
+    
+    
+</apex:page>
+
+
+-->
+
+<apex:page controller="JobCustomContollerApex" >
+    <script type = "text/javascript" >
+      function getRemoteContact(){
+      
+          Visualforce.remoting.Manager.invokeAction(
+          '{!$RemoteAction.JobCustomContollerApex.increasePosition}',
+              function(result, event){
+              
+                  if(event.status){
+                      alert('Done');
+                  }
+              },
+              {escape: false, timeout:3000, buffer: false}
+          );
+          window.location.reload();
+          
+      }
+    
+    </script>
+    
+    <apex:pageBlock >  
+         <apex:pageBlockSection title="Job Info">
+            <button onclick="getRemoteContact()" >Increase Job Position
+            </button>
+            <c:Detail /> 
+            </apex:pageBlockSection> 
+        <apex:pageBlockSection title="New Candidate Form">
+        <c:NewCandidateForm />
+        </apex:pageBlockSection>
+          <apex:pageBlockSection title="List Of Candidate">
+             <c:RelatedListComponent />
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+
 </apex:page>

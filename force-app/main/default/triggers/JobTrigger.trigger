@@ -2,7 +2,7 @@ trigger JobTrigger on Job__c (before insert,before delete,after insert,after upd
  {
      if(Trigger.isBefore && Trigger.isDelete)
       {
-         JobTriggerHandler.jobNotDelete(Trigger.Old);
+         JobTriggerHandler.jobNotDelete(Trigger.Old, Trigger.OldMap);
       }
 
      if(Trigger.isAfter && Trigger.isInsert)

@@ -1,9 +1,9 @@
 public class JobTriggerHandler 
  {
     
-    public static void jobNotDelete(List<Job__c> jobList)
+    public static void jobNotDelete(List<Job__c> jobList, Map<Id, Job__c> jobMap)
     {
-        for(Job__c job:jobList){
+        for(Job__c job: jobList){
            if(job.Active__c == true)
           {
             job.addError('This Job is active and can not be deleted');
@@ -14,7 +14,7 @@ public class JobTriggerHandler
      public static void afterInsertAllHired(Job__c job)
     {
       
-     if(job.Number_of_Positions__c==job.Hired_Applicants__c)
+     if(job.Number_of_Positions__c == job.Hired_Applicants__c)
       {
  
        EmailManager.sendMail('cgirhepunje95@gmail.com','Position','All required candidate has been hired for this job on'+ job.LastModifiedDate.Date()  );
@@ -27,9 +27,9 @@ public class JobTriggerHandler
          List<Job__c> job = new List<Job__c>();
          for(Job__c data :[SELECT Number_of_Positions__c, Hired_Applicants__c,Active__c FROM Job__c WHERE Active__c=true ] )
          {
-            if(data.Hired_Applicants__c==data.Number_of_Positions__c)
+            if(data.Hired_Applicants__c == data.Number_of_Positions__c)
             {
-              data.Active__c=false;
+              data.Active__c = false;
               job.add(data);
             }
          }
@@ -61,7 +61,7 @@ public class JobTriggerHandler
     {
       Job__c job3 = jobList;
 
-      if(job3.Number_of_Positions__c==job3.Hired_Applicants__c)
+      if(job3.Number_of_Positions__c == job3.Hired_Applicants__c)
        {
  
          EmailManager.sendMail('cgirhepunje95@gmail.com','Position','All required candidate has been hired for this job on'+ job3.LastModifiedDate.Date()  );
@@ -74,7 +74,7 @@ public class JobTriggerHandler
         List<Job__c> job = new List<Job__c>();
         for(Job__c data :[SELECT Number_of_Positions__c, Hired_Applicants__c,Active__c FROM Job__c WHERE Active__c=true ] )
         {
-         if(data.Hired_Applicants__c==data.Number_of_Positions__c)
+         if(data.Hired_Applicants__c == data.Number_of_Positions__c)
           {
            data.Active__c=false;
            job.add(data);

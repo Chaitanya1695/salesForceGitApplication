@@ -1,0 +1,23 @@
+<apex:page standardController="Candidate__c" recordSetVar="candidateRecords">
+  <apex:form >
+    <apex:pageBlock title="Candidate List">
+      <apex:pageBlockTable value="{!candidateRecords}" var="record"  >
+          <apex:column value="{!record.Salutation__c}" />
+          <apex:column value="{!record.First_Name__c}" />
+          <apex:column value="{!record.Last_Name__c}" />
+          <apex:column value="{!record.DOB__c}" />
+          <apex:column value="{!record.Email__c}" />
+          <apex:column value="{!record.Expected_Salary__c}" />
+          <apex:column value="{!record.Application_Date__c}" />
+          <apex:column value="{!record.Country__c}" />
+          <apex:column value="{!record.State__c}" />
+          <apex:column value="{!record.Status__c}" />
+          <apex:column value="{!record.Job__c}" />
+      </apex:pageBlockTable>
+        <apex:commandButton value="First" action="{!First}"  />
+        <apex:commandButton value="Next" action="{!Next}"  />
+        <apex:commandButton value="Previous" action="{!Previous}"  />
+        <apex:commandButton value="Last" action="{!Last}"  />
+    </apex:pageBlock>
+  </apex:form>     
+</apex:page>

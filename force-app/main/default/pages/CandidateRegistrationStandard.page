@@ -16,7 +16,7 @@
            </apex:pageBlockSection>
            <apex:pageBlockButtons >
                 <apex:commandButton action="{! Save}" value="save" />
-                <apex:commandButton action="{! Edit}" value="edit" />
+                <!--<apex:commandButton action="{! Edit}" value="edit" />-->
            </apex:pageBlockButtons>
        </apex:pageBlock>      
     </apex:form>   

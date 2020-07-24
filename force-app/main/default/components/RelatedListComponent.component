@@ -2,7 +2,8 @@
    <apex:pageBlock >
   <apex:pageBlockSection title="Candidate List"> 
  <apex:repeat value="{! CandidateList }" var="cand"  >
-      <ol>
+      
+     <ol>
        <apex:outputField value="{! cand.First_Name__c}"/><br/>
        <apex:outputField value="{! cand.Last_Name__c}"/><br/>
         <apex:outputField value="{! cand.Email__c}"/><br/>

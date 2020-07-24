@@ -1,47 +1,58 @@
 <apex:component controller="JobCustomContollerApex" >
-  
-  <apex:pageBlock >
-  <apex:pageBlockSection title="Job Details"> 
-      
-  <table border="5px" >        
-     
-      <tr>
-          <th>Job_Type__c</th><th>Number_of_Positions__c</th>
-          <th>Description</th><th>Expires_On__c</th><th>Salary_Offered__c</th>
-          <th>Manager__c</th><th>Required_Skills__c</th><th>Qualification_Required__c</th>
-          <th>Certification_Required__c</th>  <th>Active__c</th> 
-      </tr>
-      
- <apex:repeat value="{! Detail}" var="Job"  >
-    
-     <tr> 
-        
-         <td> {! Job.Job_Type__c}</td>
-          <td>{! Job.Number_of_Positions__c}</td>
-        <td>{! Job.Descriptions__c}</td>
-      
-       <td> {! Job.Expires_On__c}</td>
-      <td> {! Job.Salary_Offered__c}</td>
-      <td>  {! Job.Manager__c}</td>
-      
-      <td>  {! Job.Required_Skills__c}</td>
-     <td>  {! Job.Qualification_Required__c}</td>
-     <td>  {! Job.Certification_Required__c}</td>
-     <td>  {! Job.Active__c}</td>
-    
-      </tr>
-    
-     <!--<apex:repeat value="{! Detail}" var="cand">
-        <tr>
-              <td>{! cand.Active__c}</td><td></td><td></td><td></td>
-              <td></td><td></td><td></td><td></td>
-        </tr>
-     </apex:repeat>--> 
-    
- </apex:repeat>
-      </table>   
- </apex:pageBlockSection>
- 
-  </apex:pageBlock>
- 
+    <apex:pageBlock title="Wizard" >
+        <apex:pageBlockSection title="Job Details"> 
+            <apex:repeat value="{! Detail}" var="Job">
+                <table border="5px" >  
+                    <tr>
+                        <th>Job_Type__c</th><th>Number_of_Positions__c</th>
+                        <th>Description</th><th>Expires_On__c</th><th>Salary_Offered__c</th>
+                        <th>Manager__c</th><th>Required_Skills__c</th><th>Qualification_Required__c</th>
+                        <th>Certification_Required__c</th>  <th>Active__c</th> 
+                    </tr>
+                    <tr> 
+                        <td> {! Job.Job_Type__c}</td>
+                        <td>{! Job.Number_of_Positions__c}</td>
+                        <td>{! Job.Descriptions__c}</td>
+                        <td> {! Job.Expires_On__c}</td>
+                        <td> {! Job.Salary_Offered__c}</td>
+                        <td> {! Job.Manager__c}</td>
+                        <td> {! Job.Required_Skills__c}</td>
+                        <td> {! Job.Qualification_Required__c}</td>
+                        <td> {! Job.Certification_Required__c}</td>
+                        <td> {! Job.Active__c}</td>
+                    </tr>
+                </table>
+                <apex:pageBlockSection title=" Related Candidates">
+                    <table border="5px">
+                        <tr>
+                            <td>Salutation+</td>
+                            <td>First_Name</td>
+                            <td>Last_Name</td>
+                            <td>DOB</td>
+                            <td>Email</td>
+                            <td>Expected_Salary</td>
+                            <td>Application_Date</td>
+                            <td>Country</td>
+                            <td>State</td>
+                            <td>Status</td>
+                            <td>Job</td>
+                        </tr>
+                        <apex:repeat value="{!Job.Candidates__r}" var="cand">
+                            <td>{! cand.Salutation__c} </td>
+                            <td>{! cand.First_Name__c}</td>
+                            <td>{! cand.Last_Name__c}</td>
+                            <td>{! cand.DOB__c}</td>
+                            <td>{! cand.Email__c}</td>
+                            <td>{! cand.Expected_Salary__c}</td>
+                            <td>{! cand.Application_Date__c}</td>
+                            <td>{! cand.Country__c}</td>
+                            <td>{! cand.State__c}</td>
+                            <td>{! cand.Status__c}</td>
+                            <td>{! cand.Job__c}</td>
+                        </apex:repeat>
+                    </table>
+                </apex:pageBlockSection>
+            </apex:repeat>  
+        </apex:pageBlockSection>
+    </apex:pageBlock>
 </apex:component>

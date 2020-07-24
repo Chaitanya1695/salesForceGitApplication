@@ -1,0 +1,24 @@
+<apex:page standardController="Job__c" recordSetVar="objJob" >
+  <apex:form >
+    <apex:pageBlock title="Job List" >
+      <apex:pageBlockTable value="{!objJob}" var="tableJob" rows="10" >
+             <apex:column value="{!tableJob.Name}" />
+             <apex:column value="{!tableJob.Job_Type__c}" />
+             <apex:column value="{!tableJob.Manager__c}" />
+             <apex:column value="{!tableJob.Expires_On__c}" />
+             <apex:column value="{!tableJob.Descriptions__c}" />
+             <apex:column value="{!tableJob.Number_of_Positions__c}" />
+             <apex:column value="{!tableJob.Salary_Offered__c}" />
+             <apex:column value="{!tableJob.Active__c}" />
+             <apex:column value="{!tableJob.Certification_Required__c}" />
+             <apex:column value="{!tableJob.Qualification_Required__c}" />
+             <apex:column value="{!tableJob.Required_Skills__c}" />
+       </apex:pageBlockTable>
+       <apex:commandButton value="First" action="{!First}"  />
+       <apex:commandButton value="Next" action="{!Next}"  />
+       <apex:commandButton value="Previous" action="{!Previous}"  />
+       <apex:commandButton value="Last" action="{!Last}"  />
+       
+    </apex:pageBlock>
+  </apex:form>      
+</apex:page>

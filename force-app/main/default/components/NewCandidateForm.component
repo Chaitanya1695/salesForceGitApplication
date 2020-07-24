@@ -1,6 +1,6 @@
-<apex:page controller="CandidateCustomController" tabStyle="Candidate__c" showHeader="false" sidebar="false"  >
+<apex:component controller="CandidateCustomController"  allowDML="true" >
     
-    <apex:form id="frm" onmouseover="validate()"  >
+<apex:form id="frm" onmouseover="validate()"  >
        <apex:pageBlock mode="edit" title="Candidate Wizard">
             <apex:pageBlockSection >
            <apex:image url="{!$Resource.Enzigma_logo}" width="220" height="100"  />
@@ -63,5 +63,6 @@
             </apex:pageBlockSection>
        </apex:pageBlock>
     </apex:form>
+
     
-</apex:page>
+</apex:component>

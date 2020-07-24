@@ -1,21 +1,18 @@
-trigger CandidateTrigger on Candidate__c (before insert) 
+trigger CandidateTrigger on Candidate__c (before insert,after insert,after update) 
 {
-  // candidateTriggerHandler.notApplyForInactiveJob(Trigger.New);
-    if(Trigger.isInsert && Trigger.isBefore)
-    {
-        candidateTriggerHandler.checkSalaryNull(Trigger.New);
-        candidateTriggerHandler.checkApplicationDate(Trigger.New);
-       // candidateTriggerHandler.notApplyForInactiveJob(Trigger.New);
-        candidateTriggerHandler.notApplyForInactiveJob();
+    //If(!TriggerActivateDeactivate__c.getInstance().Is_Activate__c){
+    
+    If(Trigger.isInsert){
+        If(Trigger.isBefore){
+            candidateTriggerHandler.checkSalaryNull(Trigger.New);
+            candidateTriggerHandler.notApplyForInactiveJob();
+        }
     }
-  /*if(!TriggerActivateDeactivate__c.getInstance().Is_Activate__c)
-  {
-    if(Trigger.isInsert && Trigger.isBefore)
+    if((Trigger.isInsert || Trigger.isUpdate) && Trigger.isAfter )
     {
-        candidateTriggerHandler.checkSalaryNull(Trigger.New);
-        candidateTriggerHandler.checkApplicationDate(Trigger.New);
-       
+        
+        candidateTriggerHandler.checkHiredStatus(Trigger.New);
     }
     
-  }*/
+    //}
 }

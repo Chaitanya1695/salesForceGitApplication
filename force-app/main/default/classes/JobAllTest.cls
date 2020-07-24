@@ -1,13 +1,11 @@
 @isTest
 public class JobAllTest {
-
-
+   
+    
     @isTest
     static void jobTest(){
-        List<Job__c> jobList=[Select id,name from Job__c];
-       // System.assertNotEquals(25, jobList.size());
-        
-        
+        //List<Job__c> jobList=[Select id,name from Job__c];
+        // System.assertNotEquals(25, jobList.size());
         Contact newContact = new Contact(lastname='Dat');
         insert newContact;
         System.assertNotEquals(null, newContact.Id);
@@ -21,10 +19,10 @@ public class JobAllTest {
         
         insert newJob;
         
-         System.assertNotEquals(null, newJob.Id);
+        System.assertNotEquals(null, newJob.Id);
         
         
-       Candidate__c c = new Candidate__c();
+        Candidate__c c = new Candidate__c();
         
         c.First_Name__c = 'Amit';
         c.Last_Name__c = 'Gangurde';
@@ -35,9 +33,9 @@ public class JobAllTest {
         c.Status__c = 'Hired';
         c.Job__c=newJob.Id;
         insert c;
-         System.assertNotEquals(null, c.Id);
+        System.assertNotEquals(null, c.Id);
         
-       Candidate__c c2 = new Candidate__c();
+        Candidate__c c2 = new Candidate__c();
         
         c2.First_Name__c = 'Amit1';
         c2.Last_Name__c = 'Gangurde1';
@@ -51,10 +49,7 @@ public class JobAllTest {
         insert c2;
         
         System.assertNotEquals(null, c2.Id);
-        
-        List<Candidate__c> candList=CandidateVFController.getCandidateList();
-        
-        //System.assertEquals(23, candList.size());
+      
     }
     
     
